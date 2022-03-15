@@ -1,5 +1,5 @@
 import React from "react"
-import Solution from "../info/Solution"
+import Solution from "../Info/Solution"
 import { FaMapMarkerAlt } from "react-icons/fa"
 type Form = {
     isSolution: Boolean
