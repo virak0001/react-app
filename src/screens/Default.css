@@ -12,14 +12,14 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    opacity: 0.8;
 };
 .background-landing::before {
     content: '';
     position: fixed;
-    background-position: top;
     width: 100%;
     z-index: -1;
-    top: 0;
+    top: 0;;
     height: 100%;
     overflow: auto;
     left: 0;
@@ -28,4 +28,5 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    opacity: 0.8;
   }
