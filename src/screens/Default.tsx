@@ -7,7 +7,7 @@ const Layout = ({ children }: any) => {
         <Fragment>
             <div>
                 <Header />
-                <main className="background-landing">{children}</main>
+                <main>{children}</main>
                 <Footer />
             </div>
         </Fragment>
