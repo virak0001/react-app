@@ -7,7 +7,7 @@
     height: 50%;
     overflow: auto;
     left: 0;
-    background: url('../assets/images/index/bg.png') no-repeat fixed;
+    /* background: url('../assets/images/index/bg.png') no-repeat fixed; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -23,7 +23,7 @@
     height: 50%;
     overflow: auto;
     left: 0;
-    background: url('../assets/images/index/bg.png') no-repeat fixed;
+    /* background: url('../assets/images/index/bg.png') no-repeat fixed; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
