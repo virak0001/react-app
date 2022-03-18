@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Layout from '../Default';
+import Layout from '../../components/Layouts/Default';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ContactUs from '../ContactUs';
 

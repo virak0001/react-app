@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
-import Footer from '../components/common/Footer';
-import Header from '../components/common/Header';
+import Footer from '../common/Footer';
+import Header from '../common/Header';
 import './Default.css';
 const Layout = () => {
     return (
