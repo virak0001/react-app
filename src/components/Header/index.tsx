@@ -1,11 +1,13 @@
 import { FaMapMarkerAlt } from "react-icons/fa"
+import { useNavigate } from "react-router-dom";
 const Header = () => {
+    let navigate = useNavigate();
     return (
         <>
             <div className="relative">
                 <div className="bg-white mx-auto px-2 sm:px-6 border-2 pl-5">
                     <div className="flex justify-between m-auto items-center py-2 md:justify-start md:space-x-10 text-black lg:w-full xl:w-7/12">
-                        <div className="flex justify-start lg:w-0 flex-1">
+                        <div className="flex justify-start lg:w-0 flex-1" onClick={() => {navigate(`/`)}}>
                             <FaMapMarkerAlt className="mt-1" />
                             <strong className="ml-3 font-sans">KHMER CULTURE</strong>
                         </div>
