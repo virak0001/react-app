@@ -3,7 +3,7 @@ import './App.css';
 import Layout from '../../components/Layouts/Default';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ContactUs from '../ContactUs';
-import IndexPage from '../indexPage';
+import IndexPage from '..';
 import AboutUs from '../AboutUs';
 
 function App() {

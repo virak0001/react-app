@@ -8,7 +8,7 @@ const Layout = () => {
         <Fragment>
             <div>
                 <Header />
-                <main className='p-5'>
+                <main>
                     <Outlet />
                 </main>
                 <Footer />
