@@ -27,9 +27,9 @@ export default class IndexPage extends React.Component {
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                         {posts.map((item, index) => {
                             return ( 
-                            <div className="w-full border rounded-lg h-60 relative" key={index}>
+                            <div className="w-full h-60" key={index}>
                                 <strong>{item.title}</strong>
-                                <img className="w-full h-52" src={item.image} alt="Loading..." />
+                                <img className="w-full h-full" src={item.image} alt="Loading..." />
                             </div>
                             )
                         })}
