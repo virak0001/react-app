@@ -29,14 +29,14 @@ const Header = () => {
                                     </div>
                                     { this.state.isSolution? <Solution /> : ''}
                                 </div> */}
-                            <a href="/" className="text-base font-medium  hover:text-gray-900"> Home </a>
-                            <a href="tours" className="text-base font-medium  hover:text-gray-900"> Tours </a>
-                            <a href="explore" className="text-base font-medium  hover:text-gray-900"> Explore </a>
-                            <a href="about-us" className="text-base font-medium  hover:text-gray-900"> About Us </a>
-                            <a href="contact-us" className="text-base font-medium  hover:text-gray-900"> Contact </a>
+                            <a href="/" className="text-base font-medium"> Home </a>
+                            <a href="tours" className="text-base font-medium"> Tours </a>
+                            <a href="explore" className="text-base font-medium"> Explore </a>
+                            <a href="about-us" className="text-base font-medium"> About Us </a>
+                            <a href="contact-us" className="text-base font-medium"> Contact </a>
                         </nav>
                         <div className="hidden lg:flex items-center justify-end md:flex-1 lg:w-0">
-                            <a href="sign-in" className="whitespace-nowrap text-base font-medium  hover:text-gray-900"> Sign in </a>
+                            <a href="sign-in" className="whitespace-nowrap text-base font-medium"> Sign in </a>
                             <a href="sign-up" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> Sign up </a>
                         </div>
                     </div>
