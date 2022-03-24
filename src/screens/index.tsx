@@ -6,10 +6,12 @@ const posts = [
         image: require('../assets/images/province/siemreap.png')
     },
     {
-        title: 'Pursat'
+        title: 'Pursat',
+        image: require('../assets/images/province/pursat.png')
     },
     {
-        title: 'Komport'
+        title: 'Komport',
+        image: require('../assets/images/province/komport.png')
     },
     {
         title: 'Kep',
