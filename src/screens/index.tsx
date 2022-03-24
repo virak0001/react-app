@@ -29,7 +29,7 @@ export default class IndexPage extends React.Component {
                             return ( 
                             <div className="w-full h-60" key={index}>
                                 <strong>{item.title}</strong>
-                                <img className="w-full h-full" src={item.image} alt="Loading..." />
+                                <img className="w-full h-full object-cover" src={item.image} alt="Loading..." />
                             </div>
                             )
                         })}
