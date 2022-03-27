@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 // import { BsFacebook } from "react-icons/bs";
 // import { FaFacebookMessenger } from "react-icons/fa"
-const SignIn = () => {
+const SignUp = () => {
     return (
         <Fragment>
             <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -53,4 +53,4 @@ const SignIn = () => {
         </Fragment>
     )
 }
-export default SignIn
+export default SignUp
