@@ -7,5 +7,4 @@ const ContactUs = () => {
         </Fragment>
     )
 }
-
 export default ContactUs
