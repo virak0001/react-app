@@ -53,4 +53,4 @@ const SignIn = () => {
         </Fragment>
     )
 }
-export default SignIn
+export default SignIn;
