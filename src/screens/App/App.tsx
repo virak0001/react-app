@@ -7,6 +7,8 @@ import IndexPage from '..';
 import AboutUs from '../AboutUs';
 import SignIn from '../SignIn';
 
+import Tours from '../Tours';
+import Explore from '../Explore';
 
 function App() {
   return (
@@ -16,6 +18,9 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<IndexPage/>}></Route>
           <Route path="/contact-us" element={<ContactUs />}></Route>
+     
+          <Route path="/Tours" element={<Tours/>}></Route>
+          <Route path="/Explore" element={<Explore />}></Route>
           <Route path="/about-us" element={<AboutUs />}></Route>
           <Route path="/sign-in" element={<SignIn />}></Route>
         </Route>
@@ -24,5 +29,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
