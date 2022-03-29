@@ -6,7 +6,7 @@ import ContactUs from '../ContactUs';
 import IndexPage from '..';
 import AboutUs from '../AboutUs';
 import SignIn from '../SignIn';
-
+import SignUp from '../SignUp';
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />}></Route>
           <Route path="/about-us" element={<AboutUs />}></Route>
           <Route path="/sign-in" element={<SignIn />}></Route>
+          <Route path="/sign-up" element={<SignUp />}></Route>
         </Route>
       </Routes>
       </BrowserRouter>
@@ -25,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
