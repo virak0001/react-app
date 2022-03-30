@@ -45,7 +45,7 @@ const SignUp = () => {
                                 <span className="absolute left-0 inset-y-0 flex items-center pl-3"></span>
                                 Submit
                             </button>
-                            <div className="flex ml-10">
+                            <div className="flex">
                                 <div className="flex items-center">
                                     <button className="mt-2 w-full inline-flex justify-center rounded-md border-none shadow-sm px-4 py-2 bg-blue-500 text-base font-medium text-white hover:bg-white-500 sm:mt-0 focus:outline-none sm:ml-0 sm:w-auto sm:text-sm" ><BsFacebook className="mt-1" /> &nbsp;Facebook</button>
                                 </div>
@@ -53,7 +53,7 @@ const SignUp = () => {
                                     <button className="mt-2 w-full inline-flex justify-center rounded-md border-none shadow-sm px-4 py-2 bg-gray-200 text-base font-medium text-black hover:bg-white-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" ><FcGoogle className="mt-1" />&nbsp;Google</button>
                                 </div>
                                 <div className="text-sm">
-                                    <button className="ml-3 mt-2"><a href="#" className="font-medium text-indigo-600 hover:text-indigo-500"><u>Back to Home</u></a></button>
+                                    <button className="ml-2 mt-2"><a href="#" className="font-medium text-indigo-600 hover:text-indigo-500"><u>Back to Home</u></a></button>
                                 </div>
                             </div>
                         </form>
