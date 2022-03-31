@@ -1,7 +1,15 @@
+import React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa"
 import { useNavigate } from "react-router-dom";
+import Solution from "../../Info/Solution";
 const Header = () => {
     let navigate = useNavigate();
+    const [showList, setIndex] = React.useState(false);
+    function openSolution() {
+        setIndex((showList) =>
+        showList = !showList
+        )
+    }
     return (
         <>
             <div className="relative">
@@ -20,16 +28,15 @@ const Header = () => {
                             </button>
                         </div>
                         <nav className="hidden lg:flex space-x-10">
-                            {/* <div className="relative">
-                                    <div onClick={this.openSolution} className="group inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-expanded="false">
+                            <div className="relative">
+                                    <div onClick={ openSolution } className="group inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-expanded="false">
                                         <span>Home</span>
                                         <svg className="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                         </svg>
                                     </div>
-                                    { this.state.isSolution? <Solution /> : ''}
-                                </div> */}
-                            <a href="/" className="text-base font-medium"> Home </a>
+                                    { showList? <Solution /> : ''}
+                                </div>
                             <a href="tours" className="text-base font-medium"> Tours </a>
                             <a href="explore" className="text-base font-medium"> Explore </a>
                             <a href="about-us" className="text-base font-medium"> About Us </a>
