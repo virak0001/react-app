@@ -1,5 +1,20 @@
-import { Fragment } from "react";
-const SignIn = () => {
+import { Fragment, useState } from "react";
+import API from 'api';
+async function loginUser(credentials: any) {
+    return API.post('auth/signin', credentials)
+}
+   
+const SignIn = ({ setToken }: any) => {
+  const [username, setUserName] = useState();
+  const [password, setPassword] = useState();
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+      e.preventDefault();
+    const token = await loginUser({
+      username,
+      password
+    });
+    setToken(token.data);
+  }
     return (
         <Fragment>
             <div className="bg-indigo-50">
@@ -16,19 +31,19 @@ const SignIn = () => {
                             />
                         </svg>
                     </div>
-                    <div className="bg-white shadow-lg rounded xl:w-1/3 lg:w-5/12 md:w-1/2 w-full lg:px-10 sm:px-6 sm:py-10 px-2 py-6">
+                     <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded xl:w-1/3 lg:w-5/12 md:w-1/2 w-full lg:px-10 sm:px-6 sm:py-10 px-2 py-6">
                         <p tabIndex={0} className="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">
                             Login to your account
                         </p>
                         <br />
                         <div className="text-left">
                             <label htmlFor="email" className="text-sm font-medium leading-none  text-gray-800">Email</label>
-                            <input id="email"  type="email" className="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Email" />
+                            <input id="text"  type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Username" onChange={e => setUserName(e.target.value as any)} />
                         </div>
                         <div className="mt-6 w-full text-left">
                             <label htmlFor="myInput" className="text-sm text-right font-medium leading-none text-gray-800">Password</label>
                             <div className="relative flex items-center justify-center">
-                                <input id="myInput" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Password" />
+                                <input id="myInput" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Password" onChange={e => setPassword(e.target.value as any)} />
                                 <div className="absolute right-0 mt-2 mr-3 cursor-pointer">
                                     <div id="show">
                                         <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,11 +65,11 @@ const SignIn = () => {
                             </div>
                         </div>
                         <div className="mt-8">
-                            <button role="button" className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
+                            <button type="submit" className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
                                 Login
                             </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </Fragment>

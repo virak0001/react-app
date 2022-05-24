@@ -10,8 +10,13 @@ import SignUp from '../SignUp';
 
 import Tours from '../Tours';
 import Explore from '../Explore';
+import useToken from 'useToken';
 
 function App() {
+  const { accessToken, setToken } = useToken();
+  if(!accessToken) {
+    return <SignIn setToken={setToken} />
+  }
   return (
     <div className="App">
       <BrowserRouter>
