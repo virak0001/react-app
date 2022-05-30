@@ -10,6 +10,7 @@ import SignUp from '../SignUp';
 
 import Tours from '../Tours';
 import Explore from '../Explore';
+import User from '../User'
 // import useToken from 'useToken';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/Tours" element={<Tours/>}></Route>
           <Route path="/Explore" element={<Explore />}></Route>
           <Route path="/about-us" element={<AboutUs />}></Route>
+          <Route path="/users" element={<User />}></Route>
           <Route path="/sign-in" element={<SignIn />}></Route>
           <Route path="/sign-up" element={<SignUp />}></Route>
         </Route>

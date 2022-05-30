@@ -41,6 +41,7 @@ const Header = () => {
                             <a href="explore" className="text-base font-medium"> Explore </a>
                             <a href="about-us" className="text-base font-medium"> About Us </a>
                             <a href="contact-us" className="text-base font-medium"> Contact </a>
+                            <a href="users" className="text-base font-medium"> User </a>
                         </nav>
                         <div className="hidden lg:flex items-center justify-end md:flex-1 lg:w-0">
                             <a href="sign-in" className="whitespace-nowrap text-base font-medium"> Sign in </a>
