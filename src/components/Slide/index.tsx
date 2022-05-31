@@ -33,15 +33,10 @@ const Slideshow = () => {
                 <div
                     className="inline-block w-full h-full relative"
                 >
-                    <div className="absolute w-full z-50 mt-24">
+                    <div className="absolute w-full z-50 mt-24 text-white font-medium">
                         <div className="w-4/5 mx-auto">
-                            <p className="text-5xl">{IMAGES[index].title}</p>
-                            <p>{IMAGES[index].description}</p>
-                        </div>
-                    </div>
-                    <div className="absolute w-full z-50  mt-24">
-                        <div className="w-4/5">
-                            <p>{IMAGES[index].description}</p>
+                            <p className="text-7xl">{IMAGES[index].title}</p>
+                            <p className="mt-5 text-5xl">{IMAGES[index].description}</p>
                         </div>
                     </div>
                     <img className="w-full" src={IMAGES[index].url} alt="Not found" />

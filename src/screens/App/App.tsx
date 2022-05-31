@@ -2,22 +2,17 @@ import React from 'react';
 import './App.css';
 import Layout from '../../components/Layouts/Default';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ContactUs from '../ContactUs';
+import ContactUs from '../contact-us';
 import IndexPage from '..';
-import AboutUs from '../AboutUs';
-import SignIn from '../Loggin';
-import SignUp from '../SignUp';
+import AboutUs from '../aboutUs';
+import SignIn from '../login';
+import SignUp from '../signup';
 
-import Tours from '../Tours';
-import Explore from '../Explore';
-import User from '../User'
-// import useToken from 'useToken';
+import Tours from '../tour';
+import Explore from '../explore';
+import User from '../user'
 
 function App() {
-  // const { accessToken, setToken } = useToken();
-  // if(!accessToken) {
-  //   return <SignIn setToken={setToken} />
-  // }
   return (
     <div className="App">
       <BrowserRouter>
@@ -25,7 +20,6 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<IndexPage/>}></Route>
           <Route path="/contact-us" element={<ContactUs />}></Route>
-     
           <Route path="/Tours" element={<Tours/>}></Route>
           <Route path="/Explore" element={<Explore />}></Route>
           <Route path="/about-us" element={<AboutUs />}></Route>

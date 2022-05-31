@@ -1,16 +1,16 @@
 const IMAGES = [
     {
-        url: require('../assets/images/index/ankor.png'),
-        title: '',
-        description: ''
+        url: require('../assets/images/index/homepage.webp'),
+        title: 'AUTHENTIC TRAVEL',
+        description: 'Global Basecamps is a specialized tour operator that provides unique access to destinations worldwide.'
     }, {
-        url: require('../assets/images/index/ankor1.png'),
-        title: '',
-        description: ''
+        url: require('../assets/images/index/homepage.webp'),
+        title: 'AUTHENTIC TRAVEL',
+        description: 'Global Basecamps is a specialized tour operator that provides unique access to destinations worldwide.'
     }, {
-        url: require('../assets/images/index/ankor2.png'),
-        title: '',
-        description: ''
+        url: require('../assets/images/index/homepage.webp'),
+        title: 'AUTHENTIC TRAVEL',
+        description: 'Global Basecamps is a specialized tour operator that provides unique access to destinations worldwide.'
     }]
 
 export default IMAGES

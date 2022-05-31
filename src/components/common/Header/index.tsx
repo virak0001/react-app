@@ -1,28 +1,18 @@
-
 import { useState, useEffect } from "react";
-import { FaMapMarkerAlt } from "react-icons/fa"
 import { useNavigate } from "react-router-dom";
 import useToken from "useToken";
 import userService from 'api';
-import Solution from './Solution'
 const Header = () => {
+    const logo = require('../../../assets/images/logo.jpg')
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const { accessToken } = useToken();
     let navigate = useNavigate();
-    const [showList, setIndex] = useState(false);
-    function openSolution() {
-        setIndex((showList) =>
-        showList = !showList
-        )
-    }
-
     function logout() {
         localStorage.removeItem('token')
         userService.post('logout')
         navigate('/sign-in')
         window.location.reload()
     }
-
     useEffect(() => {
        if(accessToken) {
            setIsLoggedIn(true)
@@ -35,8 +25,7 @@ const Header = () => {
                 <div className="bg-white mx-auto px-2 sm:px-6 border-2 pl-5">
                     <div className="flex justify-between m-auto items-center py-2 md:justify-start md:space-x-10 text-black">
                         <div className="flex justify-start lg:w-0 flex-1" onClick={() => {navigate(`/`)}}>
-                            <FaMapMarkerAlt className="mt-1" />
-                            <strong className="ml-3 font-sans">KHMER CULTURE</strong>
+                            <img src={logo} alt='cannot found' className="h-20 w-27" />
                         </div>
                         <div className="-mr-2 -my-2 lg:hidden">
                             <button type="button" className="rounded-md p-2 mg:right inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
@@ -47,15 +36,6 @@ const Header = () => {
                             </button>
                         </div>
                         <nav className="hidden lg:flex space-x-10">
-                            <div className="relative">
-                                    <div onClick={ openSolution } className="group inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-expanded="false">
-                                        <span>Home</span>
-                                        <svg className="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    { showList? <Solution /> : ''}
-                                </div>
                             <a href="tours" className="text-base font-medium"> Tours </a>
                             <a href="explore" className="text-base font-medium"> Explore </a>
                             <a href="about-us" className="text-base font-medium"> About Us </a>

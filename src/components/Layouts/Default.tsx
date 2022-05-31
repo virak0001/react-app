@@ -7,11 +7,11 @@ const Layout = () => {
     return (
         <Fragment>
             <div>
+                <Footer />
                 <Header />
                 <main>
                     <Outlet />
                 </main>
-                <Footer />
             </div>
         </Fragment>
     )

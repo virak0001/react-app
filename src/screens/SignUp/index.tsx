@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import userService from 'api';
 async function register(credentials: any) {
     return userService.post('auth/signup', credentials)
@@ -13,19 +13,19 @@ const SignUp = () => {
     const navigate = useNavigate();
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-      const user = await register({
-        username,
-        password,
-        email,
-      });
-      if(user.data) {
-        return navigate('/sign-in')
-      }
+        const user = await register({
+            username,
+            password,
+            email,
+        });
+        if (user.data) {
+            return navigate('/sign-in')
+        }
     }
     return (
         <Fragment>
             <div className="bg-indigo-50">
-                <div className="xl:px-20 md:px-10 sm:px-6 px-4 md:py-12 py-9 2xl:mx-auto 2xl:container md:flex items-center justify-center">
+                <div className="xl:px-20 md:px-10 sm:px-6 px-4 md:py-12 py-9 2xl:mx-auto 2xl:container md:flex items-center justify-center h-full">
                     <div className="bg-white shadow-lg rounded xl:w-1/3 lg:w-5/12 md:w-1/2 w-full lg:px-10 sm:px-6 sm:py-10 px-2 py-6">
                         <div>
                             <h2 className="text-center text-3xl font-extrabold text-gray-900">Sign Up</h2>
@@ -54,18 +54,18 @@ const SignUp = () => {
                                 <span className="absolute left-0 inset-y-0 flex items-center pl-3"></span>
                                 Submit
                             </button>
-                            <div className="flex">
-                                <div className="flex items-center">
-                                    <button className="mt-2 w-full inline-flex justify-center rounded-md border-none shadow-sm px-4 py-2 bg-blue-500 text-base font-medium text-white hover:bg-white-500 sm:mt-0 focus:outline-none sm:ml-0 sm:w-auto sm:text-sm" ><BsFacebook className="mt-1" /> &nbsp;Facebook</button>
-                                </div>
-                                <div className="text-sm flex items-center">
-                                    <button className="mt-2 w-full inline-flex justify-center rounded-md border-none shadow-sm px-4 py-2 bg-gray-200 text-base font-medium text-black hover:bg-white-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" ><FcGoogle className="mt-1" />&nbsp;Google</button>
-                                </div>
-                                <div className="text-sm">
-                                    <button className="ml-2 mt-2"><a href="sign-in" className="font-medium text-indigo-600 hover:text-indigo-500"><u>Back to Home</u></a></button>
-                                </div>
-                            </div>
                         </form>
+                        <div className="flex mt-5 justify-between">
+                            <div className="flex items-center">
+                                <button className="mt-2 w-full inline-flex justify-center rounded-md border-none shadow-sm px-4 py-2 bg-blue-500 text-base font-medium text-white hover:bg-white-500 sm:mt-0 focus:outline-none sm:ml-0 sm:w-auto sm:text-sm" ><BsFacebook className="mt-1" /> &nbsp;Facebook</button>
+                            </div>
+                            <div className="text-sm flex items-center">
+                                <button className="mt-2 w-full inline-flex justify-center rounded-md border-none shadow-sm px-4 py-2 bg-gray-200 text-base font-medium text-black hover:bg-white-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" ><FcGoogle className="mt-1" />&nbsp;Google</button>
+                            </div>
+                            <div className="text-sm">
+                                <button className="ml-2 mt-2"><a href="sign-in" className="font-medium text-indigo-600 hover:text-indigo-500"><u>Back to Home</u></a></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
