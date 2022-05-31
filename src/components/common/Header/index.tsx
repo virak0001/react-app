@@ -1,7 +1,7 @@
 import React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa"
 import { useNavigate } from "react-router-dom";
-// import Solution from "../../Info/Solution";
+import Solution from './Solution'
 const Header = () => {
     let navigate = useNavigate();
     const [showList, setIndex] = React.useState(false);
@@ -35,7 +35,7 @@ const Header = () => {
                                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                         </svg>
                                     </div>
-                                    {/* { showList? <Solution /> : ''} */}
+                                    { showList? <Solution /> : ''}
                                 </div>
                             <a href="tours" className="text-base font-medium"> Tours </a>
                             <a href="explore" className="text-base font-medium"> Explore </a>

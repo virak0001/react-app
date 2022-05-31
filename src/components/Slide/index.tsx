@@ -4,7 +4,7 @@ import './index.css'
 
 const Slideshow = () => {
     const delay = 20000;
-    // const afterDelay = delay + 3000
+    const afterDelay = delay + 3000
     const [index, setIndex] = React.useState(0);
 
     React.useEffect(() => {
@@ -16,17 +16,17 @@ const Slideshow = () => {
             delay,
         );
 
-        // setTimeout(() => addClass(), delay)
-        // setTimeout(() => removeClass(), afterDelay)
+        setTimeout(() => addClass(), delay)
+        setTimeout(() => removeClass(), afterDelay)
     });
-    // function addClass() {
-    //     var element = document.getElementById("fade");
-    //     element?.classList.add("fade");
-    // }
-    // function removeClass() {
-    //     var element = document.getElementById("fade");
-    //     element?.classList.remove("fade");
-    // }
+    function addClass() {
+        var element = document.getElementById("fade");
+        element?.classList.add("fade");
+    }
+    function removeClass() {
+        var element = document.getElementById("fade");
+        element?.classList.remove("fade");
+    }
     return (
         <div className="overflow-hidden">
             <div className="inline-block w-full h-full">

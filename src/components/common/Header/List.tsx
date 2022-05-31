@@ -1,5 +1,5 @@
 import React from "react";
-import {INFORMATION as info} from "../../contrants/menu"
+import {INFORMATION as info} from "../../../contrants/menu"
 
 export default class List extends React.Component {    
     render() {
