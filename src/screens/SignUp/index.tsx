@@ -1,11 +1,10 @@
 import { Fragment, useState } from "react";
 import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
-import SignIn from "../Loggin";
 import { useNavigate  } from 'react-router-dom';
-import API from 'api';
+import userService from 'api';
 async function register(credentials: any) {
-    return API.post('auth/signup', credentials)
+    return userService.post('auth/signup', credentials)
 }
 const SignUp = () => {
     const [username, setUserName] = useState();

@@ -1,15 +1,34 @@
-import React from "react";
+
+import { useState, useEffect } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa"
 import { useNavigate } from "react-router-dom";
+import useToken from "useToken";
+import userService from 'api';
 import Solution from './Solution'
 const Header = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const { accessToken } = useToken();
     let navigate = useNavigate();
-    const [showList, setIndex] = React.useState(false);
+    const [showList, setIndex] = useState(false);
     function openSolution() {
         setIndex((showList) =>
         showList = !showList
         )
     }
+
+    function logout() {
+        localStorage.removeItem('token')
+        userService.post('logout')
+        navigate('/sign-in')
+        window.location.reload()
+    }
+
+    useEffect(() => {
+       if(accessToken) {
+           setIsLoggedIn(true)
+       }
+    }, [accessToken]);
+    
     return (
         <>
             <div className="relative">
@@ -41,11 +60,11 @@ const Header = () => {
                             <a href="explore" className="text-base font-medium"> Explore </a>
                             <a href="about-us" className="text-base font-medium"> About Us </a>
                             <a href="contact-us" className="text-base font-medium"> Contact </a>
-                            <a href="users" className="text-base font-medium"> User </a>
+                            { isLoggedIn? <a href="users" className="text-base font-medium"> User </a> : `` }
                         </nav>
                         <div className="hidden lg:flex items-center justify-end md:flex-1 lg:w-0">
-                            <a href="sign-in" className="whitespace-nowrap text-base font-medium"> Sign in </a>
-                            <a href="sign-up" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> Sign up </a>
+                            { !isLoggedIn? <><a href="sign-in" className="whitespace-nowrap text-base font-medium"> Sign in </a><a href="sign-up" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"> Sign up </a></>
+                            : <p onClick={logout} className="whitespace-nowrap text-base font-medium cursor-pointer"> Logout </p> }
                         </div>
                     </div>
                 </div>

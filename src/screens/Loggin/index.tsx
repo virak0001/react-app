@@ -1,19 +1,23 @@
 import { Fragment, useState } from "react";
-import API from 'api';
+import userService from 'api';
+import { useNavigate } from "react-router-dom";
 async function loginUser(credentials: any) {
-    return API.post('auth/signin', credentials)
+    return userService.post('auth/signin', credentials)
 }
    
-const SignIn = ({ setToken }: any) => {
+const SignIn = () => {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
+  let navigate = useNavigate();
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
       e.preventDefault();
-    const token = await loginUser({
+    const response = await loginUser({
       username,
       password
     });
-    setToken(token.data);
+    localStorage.setItem('token', JSON.stringify(response.data));
+    navigate('/users')
+    window.location.reload()
   }
     return (
         <Fragment>

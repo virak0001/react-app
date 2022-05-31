@@ -4,7 +4,7 @@ const User = () => {
     const [users, setUsers] = useState([]);
     async function fetchUser() {
         try {
-            const response = await userService.get('auth/users')
+            const response = await userService.get('/users')
             setUsers(response.data.content)
         } catch (error) {
             console.warn(error)
