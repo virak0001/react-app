@@ -1,6 +1,20 @@
 import userService from 'api';
+import Modals from '../../components/common/modals';
 import { useEffect, useState } from 'react';
 const User = () => {
+    const [showModal,setShowModal] = useState(false);
+    async function edit() {
+        console.warn();
+        setShowModal(true);
+    }
+    async function deleteUser (id:String){
+        try {
+            await userService.delete(`users/${id}`)
+            window.location.reload()
+        } catch (error) {
+            
+        }
+    }
     const [users, setUsers] = useState([]);
     async function fetchUser() {
         try {
@@ -28,7 +42,7 @@ const User = () => {
                             <th scope="col" className="px-6 py-3">
                                 Email
                             </th>
-                            <th scope="col" className="px-6 py-3 text-center">
+                            <th scope="col" className="px-6 py-3">
                                 Action
                             </th>
                         </tr>
@@ -46,14 +60,17 @@ const User = () => {
                                         <td className="px-6 py-4">
                                             {user.email}
                                         </td>
-                                        <td className="px-6 py-4 text-center">
-                                            <a href="/" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                        <td className="px-6 py-4 text-center flex">
+                                            
+                                            <p onClick={edit} className="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">Edit </p>
+                                             | <p onClick={() => deleteUser(user.id) } className="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer">Delete</p>
                                         </td></>
                                 </tr>
                             )
                         }
                     </tbody>
                 </table>
+                {showModal?<Modals />: ''}
             </div>
         </>
     )
