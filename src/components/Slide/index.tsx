@@ -1,32 +1,7 @@
-import React from "react";
-import IMAGES from "../../contrants/slide";
 import './index.css'
 
 const Slideshow = () => {
-    const delay = 20000;
-    const afterDelay = delay + 3000
-    const [index, setIndex] = React.useState(0);
-
-    React.useEffect(() => {
-        setTimeout(
-            () =>
-                setIndex((prevIndex) =>
-                    prevIndex === IMAGES.length - 1 ? 0 : prevIndex + 1
-                ),
-            delay,
-        );
-
-        setTimeout(() => addClass(), delay)
-        setTimeout(() => removeClass(), afterDelay)
-    });
-    function addClass() {
-        var element = document.getElementById("fade");
-        element?.classList.add("fade");
-    }
-    function removeClass() {
-        var element = document.getElementById("fade");
-        element?.classList.remove("fade");
-    }
+    const image = require('../../assets/images/index/homepage.webp')
     return (
         <div className="overflow-hidden">
             <div className="inline-block w-full h-full">
@@ -35,11 +10,11 @@ const Slideshow = () => {
                 >
                     <div className="absolute w-full z-50 mt-24 text-white font-medium">
                         <div className="w-4/5 mx-auto">
-                            <p className="text-7xl">{IMAGES[index].title}</p>
-                            <p className="mt-5 text-5xl">{IMAGES[index].description}</p>
+                            <p className="text-7xl">AUTHENTIC TRAVEL</p>
+                            <p className="mt-5 text-5xl">Global Basecamps is a specialized tour operator that provides unique access to destinations worldwide.</p>
                         </div>
                     </div>
-                    <img className="w-full" src={IMAGES[index].url} alt="Not found" />
+                    <img className="w-full" src={image} alt="Not found" />
                 </div>
             </div>
         </div>
