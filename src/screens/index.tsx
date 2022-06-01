@@ -121,11 +121,11 @@ export default class IndexPage extends React.Component {
 
                         With this in mind, it is crucial to understand</div>
                     <div className="mt-10 font-semibold">FEATURED DESTINATIONS</div>
-                    <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-5">
+                    <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-5 gap-1">
                         {posts.map((item, index) => {
                             return (
-                                <div className="w-full h-60 css_style"  key={index} >
-                                    <img className="w-full h-full object-cover card_style" src={item.image} alt="Loading..." />
+                                <div className="w-full h-60 css_style rounded"  key={index} >
+                                    <img className="w-full h-full object-cover card_style rounded" src={item.image} alt="Loading..." />
                                     <div className="text-white text____style">
                                         <p className="title__text">{item.title}</p>
                                         <p className="description">{item.description}</p>
